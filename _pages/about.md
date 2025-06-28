@@ -14,7 +14,7 @@ Previously, he completed his graduate studies in the [Department of Electrical E
 You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei%20Wang.pdf)  
 ---
 
-✉️ [Email](mailto:m.wang-123@sms.ed.ac.uk) | 💻 [GitHub](https://github.com/wangmiaowei) | 🔗 [LinkedIn](https://www.linkedin.com/in/miaowei-michael-wang-10127620a/)
+✉️ [Email](mailto:m.wang-123@sms.ed.ac.uk) | 💻 [GitHub](https://github.com/wangmiaowei) | 🔗 [LinkedIn](https://www.linkedin.com/in/miaowei-michael-wang-10127620a/) | 📚 [Google Scholar](https://scholar.google.com/citations?user=0Jk6h2sAAAAJ&hl=en/)
 
 
 ## 📝 Representative Publications *(First Authorship)*
@@ -22,7 +22,9 @@ You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei
 1. **CanFields: Consolidating Diffeomorphic Flows for Non-Rigid 4D Interpolation from Arbitrary-Length Sequences**
 
    *Accepted to ICCV 2025*
-   
+
+   ![CanFields Cover](papers/canfields.png)  
+
    We reconstruct a continuous spatiotemporal manifold from sparse point clouds, addressing the challenge of non-rigid 4D shape interpolation.
    
    🔗 [ArXiv](https://arxiv.org/abs/2406.18582) · [Project Page](https://wangmiaowei.github.io/CanFields.github.io/) · [Code](https://github.com/wangmiaowei/CanFields)
@@ -31,6 +33,8 @@ You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei
    
    *CVPR 2025*
    
+   ![DecoupledGaussian Cover](papers/decoupledgaussian.png) 
+
    A framework for simulating dynamic interactions involving contact and separation, by decoupling object and scene in a physically-aware manner.
    
    🔗 [ArXiv](https://arxiv.org/abs/2503.05484) · [Project Page](https://wangmiaowei.github.io/DecoupledGaussian.github.io/) · [Code](https://github.com/wangmiaowei/DecoupledGaussian/tree/main)
@@ -39,6 +43,10 @@ You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei
 
    *WACV 2024*
    
+      
+   ![SmearedRemover Cover](papers/smearedpoints.png)  
+
+
    Proposes a self‑supervised method to remove smeared or noisy points in LiDAR/depth‑sensor data by learning consistent 3D geometric structures without manual annotations.
    
    🔗[ArXiv](https://arxiv.org/abs/2311.09029) · [Code](https://github.com/wangmiaowei/wacv2024_smearedremover)
