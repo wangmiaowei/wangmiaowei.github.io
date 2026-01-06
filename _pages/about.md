@@ -11,7 +11,7 @@ He is currently a PhD student in the [School of Informatics](https://informatics
 
 Previously, he completed his graduate studies in the [Department of Electrical Engineering and Computer Science](https://eecs.engin.umich.edu/) at the University of Michigan, under the supervision of [Prof. Jason Corso](https://web.eecs.umich.edu/~jjcorso/).  He also collaborated closely with [Prof. Daniel Morris](https://www.egr.msu.edu/~dmorris/) at [Michigan State University](https://msu.edu/) on research in 3D vision.
 
-You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei%20Wang.pdf)  
+<!-- You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei%20Wang.pdf) -->
 ---
 
 ✉️ [Email](mailto:m.wang-123@sms.ed.ac.uk) | 💻 [GitHub](https://github.com/wangmiaowei) | 🔗 [LinkedIn](https://www.linkedin.com/in/miaowei-michael-wang-10127620a/) | 📚 [Google Scholar](https://scholar.google.com/citations?user=0Jk6h2sAAAAJ&hl=en/)
