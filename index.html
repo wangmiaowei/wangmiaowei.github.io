@@ -1,0 +1,506 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Miaowei (Michael) Wang </title> <meta name="author" content="Miaowei (Michael) Wang"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?v=f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?v=62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://wangmiaowei.github.io//"> <script src="/assets/js/theme.js?v=b20c9177519c98be6348acde73c9786e"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Miaowei (Michael) Wang </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/#news">News </a> </li> <li class="nav-item "> <a class="nav-link" href="/#publications">Publication </a> </li> <li class="nav-item "> <a class="nav-link" href="/#mentoring">Mentoring </a> </li> <li class="nav-item"> <button id="search-toggle" class="nav-link" title="Search" onclick="openSearchModal()"> <i class="fa-solid fa-magnifying-glass"></i> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Miaowei (Michael) Wang</span> </h1> <p class="desc">PhD Candidate, Engineer, Tutor, Researcher</p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.jpg?v=8028542da4b56f22693a0a78782f4a84" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </source></picture> </figure> <div class="more-info"> <style>.profile-more-info p{margin-bottom:.6rem;line-height:1.4}</style> <div class="profile-more-info"> <div class="mb-2">Pronouns: He/Him/His</div> <div class="mb-1">m.wang-123@sms.ed.ac.uk</div> <div class="mb-2">University of Edinburgh</div> <div style="display: flex; gap: 1rem; justify-content: center;"> <a href="/assets/pdf/CoverLetter_CV_Miaowei_02_2026.pdf" target="_blank" class="profile-action-link" style="font-size: 0.95rem;"> <i class="fas fa-file-alt"></i> CV-2026.02 </a> <a href="https://www.linkedin.com/in/miaowei-michael-wang-10127620a/" target="_blank" class="profile-action-link" style="font-size: 0.95rem;" rel="external nofollow noopener"> <i class="fab fa-linkedin"></i> LinkedIn </a> </div> </div> </div> </div> <div class="clearfix" id="about-content"> <p>Miaowei is currently a PhD candidate at the <a href="https://informatics.ed.ac.uk/" rel="external nofollow noopener" target="_blank">School of Informatics</a>, <a href="https://www.ed.ac.uk/" rel="external nofollow noopener" target="_blank">University of Edinburgh</a>, starting in October 2023. His research focuses on controllable motion representation in computer vision and graphics. His PhD journey is fortunately advised by <a href="https://avaxman.github.io/" rel="external nofollow noopener" target="_blank">Prof. Amir Vaxman</a> and <a href="https://homepages.inf.ed.ac.uk/omacaod/" rel="external nofollow noopener" target="_blank">Prof. Oisin Mac Aodha</a>.</p> <p>Previously, he completed his graduate studies at the <a href="https://eecs.engin.umich.edu/" rel="external nofollow noopener" target="_blank">Department of Electrical Engineering and Computer Science</a>, <a href="https://umich.edu/" rel="external nofollow noopener" target="_blank">University of Michigan</a>, under the supervision of <a href="https://web.eecs.umich.edu/~jjcorso/" rel="external nofollow noopener" target="_blank">Prof. Jason Corso</a>. He also collaborated with <a href="https://www.egr.msu.edu/~dmorris/" rel="external nofollow noopener" target="_blank">Prof. Daniel Morris</a> at <a href="https://msu.edu/" rel="external nofollow noopener" target="_blank">Michigan State University</a> on research in 3D point clouds.</p> <p>Besdies, he has strong industrial experience in computer vision, computer graphics, and machine learning, having worked at <a href="https://www.lightspeed-studios.com/" rel="external nofollow noopener" target="_blank">Tencent LightSpeed</a> (Algorithm Intern), <a href="https://www.sensetime.com/en" rel="external nofollow noopener" target="_blank">SenseTime</a> (AI Researcher), <a href="https://manycoretech.com/" rel="external nofollow noopener" target="_blank">ManyCore</a> (AI Researcher), <a href="https://www.kuaishou.com/en" rel="external nofollow noopener" target="_blank">Kuaishou</a> (Algorithm Intern), and <a href="https://www.chinatelecom-h.com/en/global/home.php" rel="external nofollow noopener" target="_blank">China Telecom</a> (Algorithm Intern), et al.</p> <p>He's always open to collaborating—feel free to reach out!</p> <p style="white-space: nowrap; margin-bottom: 0.8rem;"><strong>Current Research Topics:</strong> <a href="#world-models">World Models</a> · <a href="#4d-generation">4D Generation</a> · <a href="#dynamic-reconstruction">Dynamic Reconstruction</a></p> <p><small><em>Profile image (right) photographed at <a href="https://www.nationalgalleries.org" rel="external nofollow noopener" target="_blank">National Galleries Scotland</a>, March 2025.</em></small></p> </div> <script>
+      (function() {
+        // Add a unique ID to the profile if it doesn't have one for easier targeting
+        const profileDiv = document.querySelector('.profile');
+        if (profileDiv && !profileDiv.id) {
+          profileDiv.id = '__profile_align_ref';
+        }
+
+        const alignProfileToText = () => {
+          const contentDiv = document.getElementById('about-content');
+          const profileDiv = document.getElementById('__profile_align_ref');
+          
+          if (!contentDiv || !profileDiv) return;
+
+          // Step 1: Remove previous constraint to measure natural height
+          profileDiv.style.maxHeight = '';
+          profileDiv.style.overflow = '';
+          
+          // Force reflow
+          void profileDiv.offsetHeight;
+
+          // Step 2: Get positions
+          const contentRect = contentDiv.getBoundingClientRect();
+          const profileRect = profileDiv.getBoundingClientRect();
+          
+          // Step 3: Calculate excess
+          const excess = profileRect.bottom - contentRect.bottom;
+          
+          if (excess > 1) {
+            // Apply constraint: reduce profile's max height
+            const targetMaxHeight = profileRect.height - excess - 1;
+            
+            profileDiv.style.maxHeight = Math.max(100, targetMaxHeight) + 'px';
+            profileDiv.style.overflow = 'hidden';
+            profileDiv.style.transition = 'none'; // No animation jumps
+          }
+        };
+
+        // Execute alignment
+        alignProfileToText();
+        
+        // Re-execute on critical events
+        window.addEventListener('load', alignProfileToText);
+        window.addEventListener('resize', alignProfileToText);
+        
+        // Retry multiple times during page load
+        let attempt = 0;
+        const retryInterval = setInterval(() => {
+          alignProfileToText();
+          attempt++;
+          if (attempt > 20) clearInterval(retryInterval); // Stop after 20 attempts
+        }, 200);
+
+        // Also re-align when images fully load
+        document.querySelectorAll('.profile img').forEach(img => {
+          img.addEventListener('load', alignProfileToText);
+        });
+
+        // MutationObserver: Watch for any DOM changes in the content and re-align
+        if (typeof MutationObserver !== 'undefined') {
+          try {
+            const contentDiv = document.getElementById('about-content');
+            if (contentDiv) {
+              const observer = new MutationObserver((mutations) => {
+                // Debounce: only re-align if there's actual content change
+                setTimeout(alignProfileToText, 100);
+              });
+              
+              observer.observe(contentDiv, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+                attributes: false
+              });
+            }
+          } catch (e) {
+            console.log('MutationObserver not available');
+          }
+        }
+      })();
+    </script> <script>
+      (function() {
+        // How far from the top we认为进入一个 section（留出导航栏高度）
+        const VIEW_OFFSET = 160;
+
+        // 在点击导航 / hash 变化后，优先按照 hash 高亮一小段时间
+        const HASH_LOCK_DURATION = 1200; // ms
+        let hashLockUntil = 0;
+
+        // 读取页面上所有带 data-nav-section 的块，形成自动映射
+        const getTrackedSections = () => {
+          const sections = [];
+          document.querySelectorAll('[data-nav-section]').forEach((el) => {
+            const label = el.getAttribute('data-nav-section');
+            if (label) {
+              sections.push({ el, label });
+            }
+          });
+          return sections;
+        };
+
+        const setActiveNav = (label) => {
+          const items = document.querySelectorAll('.navbar-nav .nav-item:not(.dropdown)');
+
+          items.forEach((item) => {
+            const link = item.querySelector('.nav-link');
+            if (!link) return;
+
+            const text = link.textContent.trim();
+            const normText = text.toLowerCase();
+            const normLabel = label ? label.toLowerCase() : '';
+            item.classList.remove('active');
+            link.classList.remove('active');
+
+            if (
+              normLabel &&
+              (normText === normLabel || normText.startsWith(normLabel))
+            ) {
+              item.classList.add('active');
+              link.classList.add('active');
+            }
+          });
+        };
+
+        // 根据当前 URL hash（#news / #publications / #mentoring）推断 section
+        const getLabelFromHash = (sections) => {
+          const hash = window.location.hash;
+          if (!hash || hash.length <= 1) return null;
+
+          const id = hash.slice(1).toLowerCase();
+          let labelFromHash = null;
+
+          sections.forEach(({ el, label }) => {
+            if (!el.id) return;
+            if (el.id.toLowerCase() === id) {
+              labelFromHash = label;
+            }
+          });
+
+          return labelFromHash;
+        };
+
+        const getActiveSectionFromScroll = (sections) => {
+          if (!sections.length) return null;
+
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+
+          // 1. 找到所有 section 的最上方位置（News 的顶部等），在它之前一段距离内认为没有 section 激活 → 高亮 About
+          let firstTop = Infinity;
+          sections.forEach(({ el }) => {
+            const rect = el.getBoundingClientRect();
+            const top = rect.top + scrollY;
+            if (top < firstTop) firstTop = top;
+          });
+
+          const topGuard = Math.max(0, firstTop - VIEW_OFFSET - 40); // 40px 缓冲
+          if (scrollY <= topGuard) {
+            return null; // 交给上层逻辑回退到 About
+          }
+
+          // 2. 以视窗稍微偏上的一个位置作为参考点，谁离这个点最近，就高亮谁
+          const focusY = scrollY + Math.max(0, viewportHeight * 0.3 - VIEW_OFFSET);
+
+          let activeLabel = null;
+          let closestDistance = Infinity;
+
+          sections.forEach(({ el, label }) => {
+            const rect = el.getBoundingClientRect();
+            const top = rect.top + scrollY; // element absolute top
+            const bottom = rect.bottom + scrollY;
+
+            // 如果整个 section 在视窗之上或之下太远，就忽略
+            if (bottom < scrollY + VIEW_OFFSET || top > scrollY + viewportHeight) {
+              return;
+            }
+
+            // 计算 section 顶部到参考点的距离
+            const distance = Math.abs(top - focusY);
+
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              activeLabel = label;
+            }
+          });
+
+          return activeLabel;
+        };
+
+        const updateNavHighlight = () => {
+          const sections = getTrackedSections();
+
+          // 1. 在 hash 锁定时间窗口内，优先使用 hash
+          const now = Date.now();
+          let label = null;
+
+          if (now < hashLockUntil) {
+            label = getLabelFromHash(sections);
+          }
+
+          // 2. 如果没有 hash 或 hash 无法匹配，就用滚动位置
+          if (!label) {
+            label = getActiveSectionFromScroll(sections);
+          }
+
+          if (label) {
+            setActiveNav(label);
+          } else {
+            // 默认回到 About
+            setActiveNav('About');
+          }
+        };
+
+        // 滚动时基于当前位置更新高亮
+        let ticking = false;
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                updateNavHighlight();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        // 监听 hash 变化（例如点击导航锚点）
+        window.addEventListener('hashchange', () => {
+          hashLockUntil = Date.now() + HASH_LOCK_DURATION;
+          updateNavHighlight();
+        });
+
+        // 给导航链接绑定点击事件，在点击到锚点时短暂锁定 hash 作为主导
+        document.querySelectorAll('.navbar-nav .nav-item:not(.dropdown) .nav-link').forEach((link) => {
+          // 只处理真正的 <a> 链接，排除搜索按钮等
+          if (!(link instanceof HTMLAnchorElement)) return;
+
+          link.addEventListener('click', () => {
+            const href = link.getAttribute('href') || '';
+            if (href.includes('#')) {
+              hashLockUntil = Date.now() + HASH_LOCK_DURATION;
+              // 稍微延迟一下，等浏览器完成滚动再更新
+              setTimeout(updateNavHighlight, 200);
+            }
+          });
+        });
+
+        // 初次加载后按滚动位置 / hash 设置一次
+        window.addEventListener('load', () => {
+          hashLockUntil = Date.now() + HASH_LOCK_DURATION;
+          setTimeout(updateNavHighlight, 300);
+        });
+      })();
+    </script> <hr class="my-4" style="border: none; border-top: 2px solid var(--global-divider-color); box-shadow: 0 2px 4px rgba(0,0,0,0.1);"> <div id="news" data-nav-section="News"> <h2> <a href="/news/" style="color: inherit">News</a> </h2> <div class="news" style="margin-bottom: 30px; position: relative;"> <style>.news-container{max-height:250px;overflow-y:scroll;padding-right:12px;border:1px solid rgba(0,0,0,0.1);border-radius:5px;background:rgba(0,0,0,0.02)}.news-wrapper::after{content:"";position:absolute;top:0;right:0;width:0;height:0;background:#a0a0a0;border-radius:0;opacity:0}.news-container::-webkit-scrollbar{width:6px!important;display:block!important}.news-container::-webkit-scrollbar-thumb{background-color:#a0a0a0!important;border-radius:10px!important}.news-container::-webkit-scrollbar-track{background:rgba(0,0,0,0.05)!important}</style> <div class="news-wrapper" style="position: relative;"> <div class="table-responsive news-container"> <table class="table table-sm table-borderless"> <tr> <th scope="row" style="width: 20%; white-space: nowrap;">Feb 24, 2026</th> <td style="padding-left: 10px;"> My brand new personal webpage is now live! 🎉 Check it out at <strong><a href="https://wangmiaowei.github.io/">wangmiaowei.github.io</a></strong>. Excited to share my research and projects with you! </td> </tr> <tr> <th scope="row" style="width: 20%; white-space: nowrap;">Feb 21, 2026</th> <td style="padding-left: 10px;"> Our <a href="https://arxiv.org/abs/2602.18873" rel="external nofollow noopener" target="_blank">BiMotion</a> paper has been accepted to <strong>CVPR 2026</strong> with strong reviewer scores of <strong>5/6, 5/6, and 5/6</strong>. Congratulations to all coauthors! 🎉📄✨ </td> </tr> <tr> <th scope="row" style="width: 20%; white-space: nowrap;">Jan 20, 2026</th> <td style="padding-left: 10px;"> Traveling to Singapore to present our <strong>AAAI 2026</strong> papers: <a href="https://wangmiaowei.github.io/MotionPhysics.github.io/">MotionPhysics</a> and <a href="https://arxiv.org/pdf/2509.12718" rel="external nofollow noopener" target="_blank">EvoEmpirBench</a>. See you there! 🌏 </td> </tr> <tr> <th scope="row" style="width: 20%; white-space: nowrap;">Dec 15, 2025</th> <td style="padding-left: 10px;"> Invited and sponsored by <strong>Huawei Hong Kong Research Center</strong>, attending <strong>SIGGRAPH Asia 2025</strong> in Hong Kong. Looking forward to the conference! ⭐ </td> </tr> </table> </div> </div> </div> </div> <div id="publications" data-nav-section="Publication"> <h2> <a href="/publications/" style="color: inherit">Representative Publications</a> </h2> <p style="margin-bottom: 1.5rem;">For a complete list of publications, please refer to <a href="https://scholar.google.com/citations?user=0Jk6h2sAAAAJ" style="text-decoration: none; color: #333; background-color: #e9ecef; padding: 6px 12px; border-radius: 4px; display: inline-block; border: 1px solid #d0d5dd; font-size: 0.95rem; margin-left: 0.3rem;" rel="external nofollow noopener" target="_blank">Google Scholar</a></p> <div class="publications"> <h3 id="world-models" style="margin-top: 1.5rem; margin-bottom: 1rem; padding-left: 2rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 0.4rem; font-size: 1.25rem; font-weight: 500;">World Models</h3> <ol class="bibliography"><li> <div class="row publication-entry"> <div class="col-12 col-sm-4 col-lg-5 abbr" id="preview-wang2026motionphysics"> <abbr class="badge rounded w-100" style="background-color:#ffe0b2 !important; color: #1a1a1a !important; font-weight: 700 !important; border: none !important;"> <a href="https://aaai.org/" style="text-decoration: none; color: #1a1a1a !important;" rel="external nofollow noopener" target="_blank">AAAI</a> </abbr> <div class="preview-frame"> <figure> <picture> <img src="/assets/img/publication_preview/MotionPhysics.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="MotionPhysics.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div id="wang2026motionphysics" class="pub-main col-12 col-sm-8 col-lg-7"> <div class="title">MotionPhysics: Learnable Motion Distillation for Text-Guided Simulation</div> <div class="author"> <em>Miaowei Wang<sup>*</sup></em>, Jakub Zadrożny, Oisin Mac Aodha, and Amir Vaxman </div> <div class="periodical"> <em>In Proceedings of the AAAI Conference on Artificial Intelligence</em>, 2026 </div> <div class="periodical"> </div> <div class="links" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.95rem;"> <a href="http://arxiv.org/abs/2601.00504" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a> <a href="https://wangmiaowei.github.io/MotionPhysics.github.io/" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-globe"></i> Project Page</a> <a href="https://github.com/wangmiaowei/MotionPhysics" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i> Code</a> </div> <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: rgba(0,0,0,0.02); border-radius: 2px; font-size: 0.9rem;"> <p style="margin: 0;"><strong>TL;DR:</strong> A framework for learning controllable motion representations through distillation for physics-based simulations</p> </div> </div> </div> <script>
+  // Force strict alignment of preview images to the text column height
+  (function() {
+    const alignPreviews = () => {
+      document.querySelectorAll('.publication-entry').forEach(entry => {
+        // 1. Identify columns
+        const previewCol = entry.querySelector('.abbr'); // Left (Image)
+        const textCol = entry.querySelector('.pub-main'); // Right (Text)
+        const frame = previewCol ? previewCol.querySelector('.preview-frame') : null;
+        
+        if (!previewCol || !textCol || !frame) return;
+
+        // 2. Reset height to allow natural flow (vital for recalculation)
+        frame.style.height = 'auto';
+        
+        // 3. Get the height of the right text column
+        const textHeight = textCol.offsetHeight;
+        
+        // 4. Calculate available height for the frame
+        // Subtract any badges in the left column
+        let usedHeight = 0;
+        Array.from(previewCol.children).forEach(child => {
+          if (!child.classList.contains('preview-frame')) {
+            const style = window.getComputedStyle(child);
+            usedHeight += child.offsetHeight + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+          }
+        });
+        
+        // Subtract padding of the column itself
+        const colStyle = window.getComputedStyle(previewCol);
+        usedHeight += parseFloat(colStyle.paddingTop) + parseFloat(colStyle.paddingBottom);
+        
+        // 5. Apply height
+        const finalHeight = textHeight - usedHeight;
+        
+        if (finalHeight > 50) { // Safety check
+          frame.style.height = finalHeight + 'px';
+        }
+      });
+    };
+
+    // Run heavily to catch all loading states
+    window.addEventListener('load', alignPreviews);
+    window.addEventListener('resize', alignPreviews);
+    // Initial run
+    alignPreviews();
+    // Periodic checks
+    setInterval(alignPreviews, 500); 
+  })();
+</script> </li></ol> <h3 id="4d-generation" style="margin-top: 1.5rem; margin-bottom: 1rem; padding-left: 2rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 0.4rem; font-size: 1.25rem; font-weight: 500;">4D Generation</h3> <ol class="bibliography"><li> <div class="row publication-entry"> <div class="col-12 col-sm-4 col-lg-5 abbr" id="preview-wang2026bimotion"> <abbr class="badge rounded w-100" style="background-color:#bbdefb !important; color: #1a1a1a !important; font-weight: 700 !important; border: none !important;"> <a href="https://cvpr2025.thecvf.com/" style="text-decoration: none; color: #1a1a1a !important;" rel="external nofollow noopener" target="_blank">CVPR</a> </abbr> <div class="preview-frame"> <figure> <picture> <img src="/assets/img/publication_preview/BiMotion.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="BiMotion.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div id="wang2026bimotion" class="pub-main col-12 col-sm-8 col-lg-7"> <div class="title">BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation</div> <div class="author"> <em>Miaowei Wang<sup>*</sup></em>, Qingxuan Yan, Zhi Cao, Yayuan Li, Oisin Mac Aodha, Jason J. Corso, and Amir Vaxman </div> <div class="periodical"> <em>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2026 </div> <div class="periodical"> </div> <div class="links" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.95rem;"> <a href="http://arxiv.org/abs/2602.18873" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a> <a href="https://wangmiaowei.github.io/BiMotion.github.io/" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-globe"></i> Project Page</a> <a href="https://github.com/wangmiaowei/BiMotion" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i> Code</a> </div> <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: rgba(0,0,0,0.02); border-radius: 2px; font-size: 0.9rem;"> <p style="margin: 0;"><strong>TL;DR:</strong> B-spline based motion representation for generating dynamic 3D characters from text descriptions</p> </div> </div> </div> <script>
+  // Force strict alignment of preview images to the text column height
+  (function() {
+    const alignPreviews = () => {
+      document.querySelectorAll('.publication-entry').forEach(entry => {
+        // 1. Identify columns
+        const previewCol = entry.querySelector('.abbr'); // Left (Image)
+        const textCol = entry.querySelector('.pub-main'); // Right (Text)
+        const frame = previewCol ? previewCol.querySelector('.preview-frame') : null;
+        
+        if (!previewCol || !textCol || !frame) return;
+
+        // 2. Reset height to allow natural flow (vital for recalculation)
+        frame.style.height = 'auto';
+        
+        // 3. Get the height of the right text column
+        const textHeight = textCol.offsetHeight;
+        
+        // 4. Calculate available height for the frame
+        // Subtract any badges in the left column
+        let usedHeight = 0;
+        Array.from(previewCol.children).forEach(child => {
+          if (!child.classList.contains('preview-frame')) {
+            const style = window.getComputedStyle(child);
+            usedHeight += child.offsetHeight + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+          }
+        });
+        
+        // Subtract padding of the column itself
+        const colStyle = window.getComputedStyle(previewCol);
+        usedHeight += parseFloat(colStyle.paddingTop) + parseFloat(colStyle.paddingBottom);
+        
+        // 5. Apply height
+        const finalHeight = textHeight - usedHeight;
+        
+        if (finalHeight > 50) { // Safety check
+          frame.style.height = finalHeight + 'px';
+        }
+      });
+    };
+
+    // Run heavily to catch all loading states
+    window.addEventListener('load', alignPreviews);
+    window.addEventListener('resize', alignPreviews);
+    // Initial run
+    alignPreviews();
+    // Periodic checks
+    setInterval(alignPreviews, 500); 
+  })();
+</script> </li></ol> <ol class="bibliography"><li> <div class="row publication-entry"> <div class="col-12 col-sm-4 col-lg-5 abbr" id="preview-wang2025decoupledgaussian"> <abbr class="badge rounded w-100" style="background-color:#bbdefb !important; color: #1a1a1a !important; font-weight: 700 !important; border: none !important;"> <a href="https://cvpr2025.thecvf.com/" style="text-decoration: none; color: #1a1a1a !important;" rel="external nofollow noopener" target="_blank">CVPR</a> </abbr> <div class="preview-frame"> <figure> <picture> <img src="/assets/img/publication_preview/DecoupledGaussian.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="DecoupledGaussian.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div id="wang2025decoupledgaussian" class="pub-main col-12 col-sm-8 col-lg-7"> <div class="title">Decoupledgaussian: Object-scene decoupling for physics-based interaction</div> <div class="author"> <em>Miaowei Wang<sup>*</sup></em>, Yibo Zhang, Weiwei Xu, Rui Ma, Changqing Zou, and Daniel Morris </div> <div class="periodical"> <em>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>, 2025 </div> <div class="periodical"> </div> <div class="links" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.95rem;"> <a href="http://arxiv.org/abs/2503.05484" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a> <a href="https://wangmiaowei.github.io/DecoupledGaussian.github.io/" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-globe"></i> Project Page</a> <a href="https://github.com/wangmiaowei/DecoupledGaussian" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i> Code</a> </div> <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: rgba(0,0,0,0.02); border-radius: 2px; font-size: 0.9rem;"> <p style="margin: 0;"><strong>TL;DR:</strong> Decoupling objects and scenes in Gaussian representations for realistic physics-based interactions</p> </div> </div> </div> <script>
+  // Force strict alignment of preview images to the text column height
+  (function() {
+    const alignPreviews = () => {
+      document.querySelectorAll('.publication-entry').forEach(entry => {
+        // 1. Identify columns
+        const previewCol = entry.querySelector('.abbr'); // Left (Image)
+        const textCol = entry.querySelector('.pub-main'); // Right (Text)
+        const frame = previewCol ? previewCol.querySelector('.preview-frame') : null;
+        
+        if (!previewCol || !textCol || !frame) return;
+
+        // 2. Reset height to allow natural flow (vital for recalculation)
+        frame.style.height = 'auto';
+        
+        // 3. Get the height of the right text column
+        const textHeight = textCol.offsetHeight;
+        
+        // 4. Calculate available height for the frame
+        // Subtract any badges in the left column
+        let usedHeight = 0;
+        Array.from(previewCol.children).forEach(child => {
+          if (!child.classList.contains('preview-frame')) {
+            const style = window.getComputedStyle(child);
+            usedHeight += child.offsetHeight + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+          }
+        });
+        
+        // Subtract padding of the column itself
+        const colStyle = window.getComputedStyle(previewCol);
+        usedHeight += parseFloat(colStyle.paddingTop) + parseFloat(colStyle.paddingBottom);
+        
+        // 5. Apply height
+        const finalHeight = textHeight - usedHeight;
+        
+        if (finalHeight > 50) { // Safety check
+          frame.style.height = finalHeight + 'px';
+        }
+      });
+    };
+
+    // Run heavily to catch all loading states
+    window.addEventListener('load', alignPreviews);
+    window.addEventListener('resize', alignPreviews);
+    // Initial run
+    alignPreviews();
+    // Periodic checks
+    setInterval(alignPreviews, 500); 
+  })();
+</script> </li></ol> <h3 id="dynamic-reconstruction" style="margin-top: 1.5rem; margin-bottom: 1rem; padding-left: 2rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 0.4rem; font-size: 1.25rem; font-weight: 500;">Dynamic Reconstruction</h3> <ol class="bibliography"><li> <div class="row publication-entry"> <div class="col-12 col-sm-4 col-lg-5 abbr" id="preview-wang2025canfields"> <abbr class="badge rounded w-100" style="background-color:#e1bee7 !important; color: #1a1a1a !important; font-weight: 700 !important; border: none !important;"> <a href="https://iccv2025.thecvf.com/" style="text-decoration: none; color: #1a1a1a !important;" rel="external nofollow noopener" target="_blank">ICCV</a> </abbr> <div class="preview-frame"> <figure> <picture> <img src="/assets/img/publication_preview/canfields.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="canfields.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div id="wang2025canfields" class="pub-main col-12 col-sm-8 col-lg-7"> <div class="title">CanFields: Consolidating Diffeomorphic Flows for Non-Rigid 4D Interpolation from Arbitrary-Length Sequences</div> <div class="author"> <em>Miaowei Wang<sup>*</sup></em>, Changjian Li, and Amir Vaxman </div> <div class="periodical"> <em>In Proceedings of the IEEE/CVF International Conference on Computer Vision</em>, 2025 </div> <div class="periodical"> </div> <div class="links" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.95rem;"> <a href="http://arxiv.org/abs/2406.18582" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a> <a href="https://wangmiaowei.github.io/CanFields.github.io/" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-globe"></i> Project Page</a> <a href="https://github.com/wangmiaowei/CanFields" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i> Code</a> </div> <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: rgba(0,0,0,0.02); border-radius: 2px; font-size: 0.9rem;"> <p style="margin: 0;"><strong>TL;DR:</strong> Diffeomorphic flow-based approach for non-rigid 4D surface reconstruction from arbitrary-length sequences</p> </div> </div> </div> <script>
+  // Force strict alignment of preview images to the text column height
+  (function() {
+    const alignPreviews = () => {
+      document.querySelectorAll('.publication-entry').forEach(entry => {
+        // 1. Identify columns
+        const previewCol = entry.querySelector('.abbr'); // Left (Image)
+        const textCol = entry.querySelector('.pub-main'); // Right (Text)
+        const frame = previewCol ? previewCol.querySelector('.preview-frame') : null;
+        
+        if (!previewCol || !textCol || !frame) return;
+
+        // 2. Reset height to allow natural flow (vital for recalculation)
+        frame.style.height = 'auto';
+        
+        // 3. Get the height of the right text column
+        const textHeight = textCol.offsetHeight;
+        
+        // 4. Calculate available height for the frame
+        // Subtract any badges in the left column
+        let usedHeight = 0;
+        Array.from(previewCol.children).forEach(child => {
+          if (!child.classList.contains('preview-frame')) {
+            const style = window.getComputedStyle(child);
+            usedHeight += child.offsetHeight + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+          }
+        });
+        
+        // Subtract padding of the column itself
+        const colStyle = window.getComputedStyle(previewCol);
+        usedHeight += parseFloat(colStyle.paddingTop) + parseFloat(colStyle.paddingBottom);
+        
+        // 5. Apply height
+        const finalHeight = textHeight - usedHeight;
+        
+        if (finalHeight > 50) { // Safety check
+          frame.style.height = finalHeight + 'px';
+        }
+      });
+    };
+
+    // Run heavily to catch all loading states
+    window.addEventListener('load', alignPreviews);
+    window.addEventListener('resize', alignPreviews);
+    // Initial run
+    alignPreviews();
+    // Periodic checks
+    setInterval(alignPreviews, 500); 
+  })();
+</script> </li></ol> <ol class="bibliography"><li> <div class="row publication-entry"> <div class="col-12 col-sm-4 col-lg-5 abbr" id="preview-wang2024self"> <abbr class="badge rounded w-100" style="background-color:#b2dfdb !important; color: #1a1a1a !important; font-weight: 700 !important; border: none !important;"> <a href="https://wacv2024.thecvf.com/" style="text-decoration: none; color: #1a1a1a !important;" rel="external nofollow noopener" target="_blank">WACV</a> </abbr> <div class="preview-frame"> <figure> <picture> <img src="/assets/img/publication_preview/smeared_points.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="smeared_points.jpg" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div id="wang2024self" class="pub-main col-12 col-sm-8 col-lg-7"> <div class="title">Self-annotated 3d geometric learning for smeared points removal</div> <div class="author"> <em>Miaowei Wang<sup>*</sup></em> and Daniel Morris </div> <div class="periodical"> <em>In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision</em>, 2024 </div> <div class="periodical"> </div> <div class="links" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.95rem;"> <a href="http://arxiv.org/abs/2311.09029" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a> <a href="https://www.youtube.com/watch?v=KWLBUCTdif4" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="fas fa-play"></i> Video</a> <a href="https://github.com/wangmiaowei/wacv2024_smearedremover" style="text-decoration: none; color: var(--global-theme-color);" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i> Code</a> </div> <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: rgba(0,0,0,0.02); border-radius: 2px; font-size: 0.9rem;"> <p style="margin: 0;"><strong>TL;DR:</strong> Self-supervised 3D geometric learning framework for cleaning point clouds from acquisition artifacts</p> </div> </div> </div> <script>
+  // Force strict alignment of preview images to the text column height
+  (function() {
+    const alignPreviews = () => {
+      document.querySelectorAll('.publication-entry').forEach(entry => {
+        // 1. Identify columns
+        const previewCol = entry.querySelector('.abbr'); // Left (Image)
+        const textCol = entry.querySelector('.pub-main'); // Right (Text)
+        const frame = previewCol ? previewCol.querySelector('.preview-frame') : null;
+        
+        if (!previewCol || !textCol || !frame) return;
+
+        // 2. Reset height to allow natural flow (vital for recalculation)
+        frame.style.height = 'auto';
+        
+        // 3. Get the height of the right text column
+        const textHeight = textCol.offsetHeight;
+        
+        // 4. Calculate available height for the frame
+        // Subtract any badges in the left column
+        let usedHeight = 0;
+        Array.from(previewCol.children).forEach(child => {
+          if (!child.classList.contains('preview-frame')) {
+            const style = window.getComputedStyle(child);
+            usedHeight += child.offsetHeight + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+          }
+        });
+        
+        // Subtract padding of the column itself
+        const colStyle = window.getComputedStyle(previewCol);
+        usedHeight += parseFloat(colStyle.paddingTop) + parseFloat(colStyle.paddingBottom);
+        
+        // 5. Apply height
+        const finalHeight = textHeight - usedHeight;
+        
+        if (finalHeight > 50) { // Safety check
+          frame.style.height = finalHeight + 'px';
+        }
+      });
+    };
+
+    // Run heavily to catch all loading states
+    window.addEventListener('load', alignPreviews);
+    window.addEventListener('resize', alignPreviews);
+    // Initial run
+    alignPreviews();
+    // Periodic checks
+    setInterval(alignPreviews, 500); 
+  })();
+</script> </li></ol> </div> </div> <div id="mentoring" data-nav-section="Mentoring"> <h2> <a href="/mentoring/" style="color: inherit">Mentoring</a> </h2> <h3>Teaching Assistant</h3> <p>I have served as a Teaching Assistant for several core courses at the University of Edinburgh:</p> <ul> <li><a href="https://opencourse.inf.ed.ac.uk/cggs" rel="external nofollow noopener" target="_blank">CGGS: Computer Graphics — Geometry and Simulation</a></li> <li><a href="https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11212.htm" rel="external nofollow noopener" target="_blank">Computer Vision</a></li> <li><a href="https://groups.inf.ed.ac.uk/teaching/aml/" rel="external nofollow noopener" target="_blank">Applied Machine Learning</a></li> </ul> <h3>Student Mentoring</h3> <p>I have been fortunate to mentor and support several outstanding students in their research and career development:</p> <ul> <li> <strong><a href="https://openreview.net/profile?id=~Pukun_Zhao1" rel="external nofollow noopener" target="_blank">Pukun Zhao</a></strong> — AAAI 2026 Accepted</li> <li> <strong><a href="https://www.linkedin.com/in/qingxuan-yan-468258395/" rel="external nofollow noopener" target="_blank">Qingxuan Yan</a></strong> — Cornell Tech (2025-2026)</li> <li> <strong><a href="https://www.linkedin.com/in/ruipeng-wang-681b89287/" rel="external nofollow noopener" target="_blank">Ruipeng Wang</a></strong> — UPenn to <a href="https://www.timistudios.com/" rel="external nofollow noopener" target="_blank">TiMi Studio Group</a> (2025-2026)</li> <li> <strong><a href="https://www.linkedin.com/in/yusheng-tan-7840892b7/" rel="external nofollow noopener" target="_blank">Yusheng Tan</a></strong> — WashU (2026-Now)</li> </ul> </div> </article> </div> </div> <footer class="mt-3" role="contentinfo" style="background-color: var(--global-bg-color); border-top: 1px solid var(--global-divider-color); padding: 0.5rem 0;"> <div class="container"> <div class="row align-items-center"> <div class="col-md-6 mb-1 mb-md-0 text-center text-md-left"> <div id="clustrmaps-container" class="clustrmaps-container mx-auto mx-md-0" aria-label="Visitor map"> <a href="https://clustrmaps.com/site/1c9ar" title="ClustrMaps" rel="external nofollow noopener" target="_blank"> <img src="https://clustrmaps.com/map_v2.png?d=4ap2XfBaT0uEV8k86lhhj7VF3cQQHD5Vy5FOqKf3RZw&amp;cl=ffffff&amp;w=600" alt="Visitor map" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '&lt;span style=\'font-size: 0.8rem; color: #6c757d;\'&gt;Map blocked by browser&lt;/span&gt;');"> </a> </div> <div style="font-size: 0.85rem; color: var(--global-text-color-light); margin-top: 0.2rem; letter-spacing: 0.5px; font-weight: 500;"> Site last updated: <span style="color: var(--global-theme-color);">2026-02-24</span> </div> </div> <div class="col-md-6 text-center text-md-right"> <div class="contact-icons" style="margin-bottom: 0.4rem; letter-spacing: 0.4rem;"> <a href="/assets/pdf/CoverLetter_CV_Miaowei_02_2026.pdf" title="CV" target="_blank" rel="noopener noreferrer"> <i class="fa-solid fa-file-pdf"></i> </a> <a href="mailto:m.wang-123@sms.ed.ac.uk" title="Email" target="_blank" rel="noopener noreferrer"> <i class="fa-solid fa-envelope"></i> </a> <a href="https://github.com/wangmiaowei" title="GitHub" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-github"></i> </a> <a href="https://linkedin.com/in/miaowei-michael-wang-10127620a" title="LinkedIn" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i> </a> <a href="https://www.researchgate.net/profile/Miaowei-Wang" title="ResearchGate" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-researchgate"></i> </a> <a href="https://scholar.google.com/citations?user=0Jk6h2sAAAAJ" title="Google Scholar" target="_blank" rel="noopener noreferrer"> <i class="ai ai-google-scholar"></i> </a> <a href="https://space.bilibili.com/407287196" title="Bilibili" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-bilibili"></i> </a> </div> <div style="font-size: 0.85rem; color: var(--global-text-color-light); line-height: 1.6;"> © 2026 Miaowei (Michael) Wang. <br><span style="font-size: 0.8rem; opacity: 0.85;">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </span> </div> </div> </div> </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?v=85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?v=2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?v=c15de51d4bb57887caa2c21988d97279"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?v=a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?v=2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?v=f40d453793ff4f64e238e420181a1d17"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?v=a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?v=6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?v=ccc841c459bfc0e64c1c2b5acd10df02"></script> </body> </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://wangmiaowei.github.io//sitemap.xml
