@@ -56,6 +56,14 @@ layout: default
           
           if (!contentDiv || !profileDiv) return;
 
+          // On mobile (<576px), disable profile height constraint to show full content
+          const isMobile = window.innerWidth < 576;
+          if (isMobile) {
+            profileDiv.style.maxHeight = '';
+            profileDiv.style.overflow = '';
+            return;
+          }
+
           // Step 1: Remove previous constraint to measure natural height
           profileDiv.style.maxHeight = '';
           profileDiv.style.overflow = '';
