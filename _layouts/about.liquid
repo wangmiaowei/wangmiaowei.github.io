@@ -364,7 +364,15 @@ layout: default
     <!-- Social -->
     {% if page.social %}
       <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
+        <div class="contact-icons">
+          {% if site.data.socials %}
+            {% for item in site.data.socials %}
+              <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noopener noreferrer">
+                <i class="{{ item.icon }}"></i>
+              </a>
+            {% endfor %}
+          {% endif %}
+        </div>
 
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>

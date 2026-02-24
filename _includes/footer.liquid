@@ -25,11 +25,11 @@
 
       <!-- Right: Icons + Copyright -->
       <div class="col-md-6 text-center text-md-right">
-        <div class="contact-icons" style="margin-bottom: 0.4rem; letter-spacing: 0.4rem;">
+        <div class="contact-icons" style="margin-bottom: 0.4rem; display: inline-flex; flex-wrap: nowrap; align-items: center; justify-content: center; white-space: nowrap; overflow-x: auto; overflow-y: hidden; letter-spacing: 0; gap: 0.4rem; max-width: 100%;">
           {% if site.data.socials %}
             {% for item in site.data.socials %}
               <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noopener noreferrer">
-                <i class="{{ item.icon }}"></i>
+                <i class="{{ item.icon }}" style="line-height: 1;"></i>
               </a>
             {% endfor %}
           {% endif %}
