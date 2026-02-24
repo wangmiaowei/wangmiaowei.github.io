@@ -1,0 +1,46 @@
+{% capture footer_contents %}
+  &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
+{% endcapture %}
+
+<footer class="mt-3" role="contentinfo" style="background-color: var(--global-bg-color); border-top: 1px solid var(--global-divider-color); padding: 0.5rem 0;">
+  {% if site.newsletter.enabled %}
+    {% include newsletter.liquid %}
+  {% endif %}
+
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left: Map + Last Updated -->
+      <div class="col-md-6 mb-1 mb-md-0 text-center text-md-left">
+        <div id="clustrmaps-container" class="clustrmaps-container mx-auto mx-md-0" aria-label="Visitor map">
+          <a href="https://clustrmaps.com/site/1c9ar" title="ClustrMaps">
+            <img src="https://clustrmaps.com/map_v2.png?d=4ap2XfBaT0uEV8k86lhhj7VF3cQQHD5Vy5FOqKf3RZw&cl=ffffff&w=600" alt="Visitor map" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span style=\'font-size: 0.8rem; color: #6c757d;\'>Map blocked by browser</span>');">
+          </a>
+        </div>
+        {% if site.last_updated %}
+          <div style="font-size: 0.85rem; color: var(--global-text-color-light); margin-top: 0.2rem; letter-spacing: 0.5px; font-weight: 500;">
+            Site last updated: <span style="color: var(--global-theme-color);">{{ 'now' | date: '%Y-%m-%d' }}</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Right: Icons + Copyright -->
+      <div class="col-md-6 text-center text-md-right">
+        <div class="contact-icons" style="margin-bottom: 0.4rem; letter-spacing: 0.4rem;">
+          {% if site.data.socials %}
+            {% for item in site.data.socials %}
+              <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noopener noreferrer">
+                <i class="{{ item.icon }}"></i>
+              </a>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div style="font-size: 0.85rem; color: var(--global-text-color-light); line-height: 1.6;">
+          {{ footer_contents }}
+          {% if site.footer_text %}
+            <br><span style="font-size: 0.8rem; opacity: 0.85;">{{ site.footer_text }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

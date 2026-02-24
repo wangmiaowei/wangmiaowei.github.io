@@ -1,0 +1,377 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}</span>
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1
+      rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix" id="about-content">
+      {{ content }}
+    </div>
+
+    <!-- Alignment Script -->
+    <script>
+      (function() {
+        // Add a unique ID to the profile if it doesn't have one for easier targeting
+        const profileDiv = document.querySelector('.profile');
+        if (profileDiv && !profileDiv.id) {
+          profileDiv.id = '__profile_align_ref';
+        }
+
+        const alignProfileToText = () => {
+          const contentDiv = document.getElementById('about-content');
+          const profileDiv = document.getElementById('__profile_align_ref');
+          
+          if (!contentDiv || !profileDiv) return;
+
+          // Step 1: Remove previous constraint to measure natural height
+          profileDiv.style.maxHeight = '';
+          profileDiv.style.overflow = '';
+          
+          // Force reflow
+          void profileDiv.offsetHeight;
+
+          // Step 2: Get positions
+          const contentRect = contentDiv.getBoundingClientRect();
+          const profileRect = profileDiv.getBoundingClientRect();
+          
+          // Step 3: Calculate excess
+          const excess = profileRect.bottom - contentRect.bottom;
+          
+          if (excess > 1) {
+            // Apply constraint: reduce profile's max height
+            const targetMaxHeight = profileRect.height - excess - 1;
+            
+            profileDiv.style.maxHeight = Math.max(100, targetMaxHeight) + 'px';
+            profileDiv.style.overflow = 'hidden';
+            profileDiv.style.transition = 'none'; // No animation jumps
+          }
+        };
+
+        // Execute alignment
+        alignProfileToText();
+        
+        // Re-execute on critical events
+        window.addEventListener('load', alignProfileToText);
+        window.addEventListener('resize', alignProfileToText);
+        
+        // Retry multiple times during page load
+        let attempt = 0;
+        const retryInterval = setInterval(() => {
+          alignProfileToText();
+          attempt++;
+          if (attempt > 20) clearInterval(retryInterval); // Stop after 20 attempts
+        }, 200);
+
+        // Also re-align when images fully load
+        document.querySelectorAll('.profile img').forEach(img => {
+          img.addEventListener('load', alignProfileToText);
+        });
+
+        // MutationObserver: Watch for any DOM changes in the content and re-align
+        if (typeof MutationObserver !== 'undefined') {
+          try {
+            const contentDiv = document.getElementById('about-content');
+            if (contentDiv) {
+              const observer = new MutationObserver((mutations) => {
+                // Debounce: only re-align if there's actual content change
+                setTimeout(alignProfileToText, 100);
+              });
+              
+              observer.observe(contentDiv, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+                attributes: false
+              });
+            }
+          } catch (e) {
+            console.log('MutationObserver not available');
+          }
+        }
+      })();
+    </script>
+
+    <!-- Navigation Highlight Script -->
+    <script>
+      (function() {
+        // How far from the top we认为进入一个 section（留出导航栏高度）
+        const VIEW_OFFSET = 160;
+
+        // 在点击导航 / hash 变化后，优先按照 hash 高亮一小段时间
+        const HASH_LOCK_DURATION = 1200; // ms
+        let hashLockUntil = 0;
+
+        // 读取页面上所有带 data-nav-section 的块，形成自动映射
+        const getTrackedSections = () => {
+          const sections = [];
+          document.querySelectorAll('[data-nav-section]').forEach((el) => {
+            const label = el.getAttribute('data-nav-section');
+            if (label) {
+              sections.push({ el, label });
+            }
+          });
+          return sections;
+        };
+
+        const setActiveNav = (label) => {
+          const items = document.querySelectorAll('.navbar-nav .nav-item:not(.dropdown)');
+
+          items.forEach((item) => {
+            const link = item.querySelector('.nav-link');
+            if (!link) return;
+
+            const text = link.textContent.trim();
+            const normText = text.toLowerCase();
+            const normLabel = label ? label.toLowerCase() : '';
+            item.classList.remove('active');
+            link.classList.remove('active');
+
+            if (
+              normLabel &&
+              (normText === normLabel || normText.startsWith(normLabel))
+            ) {
+              item.classList.add('active');
+              link.classList.add('active');
+            }
+          });
+        };
+
+        // 根据当前 URL hash（#news / #publications / #mentoring）推断 section
+        const getLabelFromHash = (sections) => {
+          const hash = window.location.hash;
+          if (!hash || hash.length <= 1) return null;
+
+          const id = hash.slice(1).toLowerCase();
+          let labelFromHash = null;
+
+          sections.forEach(({ el, label }) => {
+            if (!el.id) return;
+            if (el.id.toLowerCase() === id) {
+              labelFromHash = label;
+            }
+          });
+
+          return labelFromHash;
+        };
+
+        const getActiveSectionFromScroll = (sections) => {
+          if (!sections.length) return null;
+
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+
+          // 1. 找到所有 section 的最上方位置（News 的顶部等），在它之前一段距离内认为没有 section 激活 → 高亮 About
+          let firstTop = Infinity;
+          sections.forEach(({ el }) => {
+            const rect = el.getBoundingClientRect();
+            const top = rect.top + scrollY;
+            if (top < firstTop) firstTop = top;
+          });
+
+          const topGuard = Math.max(0, firstTop - VIEW_OFFSET - 40); // 40px 缓冲
+          if (scrollY <= topGuard) {
+            return null; // 交给上层逻辑回退到 About
+          }
+
+          // 2. 以视窗稍微偏上的一个位置作为参考点，谁离这个点最近，就高亮谁
+          const focusY = scrollY + Math.max(0, viewportHeight * 0.3 - VIEW_OFFSET);
+
+          let activeLabel = null;
+          let closestDistance = Infinity;
+
+          sections.forEach(({ el, label }) => {
+            const rect = el.getBoundingClientRect();
+            const top = rect.top + scrollY; // element absolute top
+            const bottom = rect.bottom + scrollY;
+
+            // 如果整个 section 在视窗之上或之下太远，就忽略
+            if (bottom < scrollY + VIEW_OFFSET || top > scrollY + viewportHeight) {
+              return;
+            }
+
+            // 计算 section 顶部到参考点的距离
+            const distance = Math.abs(top - focusY);
+
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              activeLabel = label;
+            }
+          });
+
+          return activeLabel;
+        };
+
+        const updateNavHighlight = () => {
+          const sections = getTrackedSections();
+
+          // 1. 在 hash 锁定时间窗口内，优先使用 hash
+          const now = Date.now();
+          let label = null;
+
+          if (now < hashLockUntil) {
+            label = getLabelFromHash(sections);
+          }
+
+          // 2. 如果没有 hash 或 hash 无法匹配，就用滚动位置
+          if (!label) {
+            label = getActiveSectionFromScroll(sections);
+          }
+
+          if (label) {
+            setActiveNav(label);
+          } else {
+            // 默认回到 About
+            setActiveNav('About');
+          }
+        };
+
+        // 滚动时基于当前位置更新高亮
+        let ticking = false;
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                updateNavHighlight();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        // 监听 hash 变化（例如点击导航锚点）
+        window.addEventListener('hashchange', () => {
+          hashLockUntil = Date.now() + HASH_LOCK_DURATION;
+          updateNavHighlight();
+        });
+
+        // 给导航链接绑定点击事件，在点击到锚点时短暂锁定 hash 作为主导
+        document.querySelectorAll('.navbar-nav .nav-item:not(.dropdown) .nav-link').forEach((link) => {
+          // 只处理真正的 <a> 链接，排除搜索按钮等
+          if (!(link instanceof HTMLAnchorElement)) return;
+
+          link.addEventListener('click', () => {
+            const href = link.getAttribute('href') || '';
+            if (href.includes('#')) {
+              hashLockUntil = Date.now() + HASH_LOCK_DURATION;
+              // 稍微延迟一下，等浏览器完成滚动再更新
+              setTimeout(updateNavHighlight, 200);
+            }
+          });
+        });
+
+        // 初次加载后按滚动位置 / hash 设置一次
+        window.addEventListener('load', () => {
+          hashLockUntil = Date.now() + HASH_LOCK_DURATION;
+          setTimeout(updateNavHighlight, 300);
+        });
+      })();
+    </script>
+
+    <!-- Divider -->
+    <hr class="my-4" style="border: none; border-top: 2px solid var(--global-divider-color); box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <div id="news" data-nav-section="News">
+        <h2>
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      </div>
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <div id="publications" data-nav-section="Publication">
+        <h2>
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Representative Publications</a>
+        </h2>
+        <p style="margin-bottom: 1.5rem;">For a complete list of publications, please refer to <a href="https://scholar.google.com/citations?user=0Jk6h2sAAAAJ" style="text-decoration: none; color: #333; background-color: #e9ecef; padding: 6px 12px; border-radius: 4px; display: inline-block; border: 1px solid #d0d5dd; font-size: 0.95rem; margin-left: 0.3rem;">Google Scholar</a></p>
+        {% include selected_papers.liquid %}
+      </div>
+    {% endif %}
+
+    <!-- Mentoring -->
+    {% if page.mentoring %}
+      <div id="mentoring" data-nav-section="Mentoring">
+        <h2>
+          <a href="{{ '/mentoring/' | relative_url }}" style="color: inherit">Mentoring</a>
+        </h2>
+        
+        <h3>Teaching Assistant</h3>
+        <p>I have served as a Teaching Assistant for several core courses at the University of Edinburgh:</p>
+        <ul>
+          <li><a href="https://opencourse.inf.ed.ac.uk/cggs">CGGS: Computer Graphics — Geometry and Simulation</a></li>
+          <li><a href="https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11212.htm">Computer Vision</a></li>
+          <li><a href="https://groups.inf.ed.ac.uk/teaching/aml/">Applied Machine Learning</a></li>
+        </ul>
+
+        <h3>Student Mentoring</h3>
+        <p>I have been fortunate to mentor and support several outstanding students in their research and career development:</p>
+        <ul>
+          <li><strong><a href="https://openreview.net/profile?id=~Pukun_Zhao1">Pukun Zhao</a></strong> — AAAI 2026 Accepted</li>
+          <li><strong><a href="https://www.linkedin.com/in/qingxuan-yan-468258395/">Qingxuan Yan</a></strong> — Cornell Tech (2025-2026)</li>
+          <li><strong><a href="https://www.linkedin.com/in/ruipeng-wang-681b89287/">Ruipeng Wang</a></strong> — UPenn to <a href="https://www.timistudios.com/">TiMi Studio Group</a> (2025-2026)</li>
+          <li><strong><a href="https://www.linkedin.com/in/yusheng-tan-7840892b7/">Yusheng Tan</a></strong> — WashU (2026-Now)</li>
+        </ul>
+      </div>
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
+    {% endif %}
+  </article>
+</div>

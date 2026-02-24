@@ -1,0 +1,5 @@
+#!/bin/bash
+# Wrapper script to redirect deprecated 'convert' command to 'magick convert'
+# This resolves the ImageMagick v7 deprecation warning
+
+exec magick "$@"

@@ -1,58 +1,54 @@
 ---
+layout: about
+title: About
 permalink: /
-title: "Miaowei Wang"
-except: "Miaowei Wang"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+subtitle: PhD Candidate, Engineer, Tutor, Researcher
+# <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+
+profile:
+  align: right
+  image: prof_pic.jpg
+  image_circular: false # crops the image to make it circular
+  more_info: >
+    <style>
+      .profile-more-info p { margin-bottom: 0.6rem; line-height: 1.4; }
+    </style>
+    <div class="profile-more-info">
+      <div class="mb-2">Pronouns: He/Him/His</div>
+      <div class="mb-1">m.wang-123@sms.ed.ac.uk</div>
+      <div class="mb-2">University of Edinburgh</div>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="/assets/pdf/CoverLetter_CV_Miaowei_02_2026.pdf" target="_blank" class="profile-action-link" style="font-size: 0.95rem;">
+          <i class="fas fa-file-alt"></i> CV-2026.02
+        </a>
+        <a href="https://www.linkedin.com/in/miaowei-michael-wang-10127620a/" target="_blank" class="profile-action-link" style="font-size: 0.95rem;">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+
+
+selected_papers: true # includes a list of papers marked as "selected={true}"
+mentoring: true # includes a mentoring section
+social: false # social icons are now shown globally in the footer
+
+announcements:
+  enabled: true # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 100 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: false
 ---
-He is currently a PhD student in the [School of Informatics](https://informatics.ed.ac.uk/) at [the University of Edinburgh](https://www.ed.ac.uk/), where his research focuses on controllable motion representation in 4D vision and computer graphics. He has strong academic and industrial experience in computer vision, computer graphics and machine learning. His PhD journey is fortunately advised by [Prof. Amir Vaxman](https://avaxman.github.io/) and [Prof. Oisin Mac Aodha](https://homepages.inf.ed.ac.uk/omacaod/).
 
-Previously, he completed his graduate studies in the [Department of Electrical Engineering and Computer Science](https://eecs.engin.umich.edu/) at the University of Michigan, under the supervision of [Prof. Jason Corso](https://web.eecs.umich.edu/~jjcorso/).  He also collaborated closely with [Prof. Daniel Morris](https://www.egr.msu.edu/~dmorris/) at [Michigan State University](https://msu.edu/) on research in 3D vision.
+<p>Miaowei is currently a PhD candidate at the <a href="https://informatics.ed.ac.uk/">School of Informatics</a>, <a href="https://www.ed.ac.uk/">University of Edinburgh</a>, starting in October 2023. His research focuses on controllable motion representation in computer vision and graphics.  His PhD journey is fortunately advised by <a href="https://avaxman.github.io/">Prof. Amir Vaxman</a> and <a href="https://homepages.inf.ed.ac.uk/omacaod/">Prof. Oisin Mac Aodha</a>.</p>
 
-<!-- You can find his CV here: 📄 [Miaowei's Curriculum Vitae](../assets/CV_Miaowei%20Wang.pdf) -->
----
+<p>Previously, he completed his graduate studies at the <a href="https://eecs.engin.umich.edu/">Department of Electrical Engineering and Computer Science</a>, <a href="https://umich.edu/">University of Michigan</a>, under the supervision of <a href="https://web.eecs.umich.edu/~jjcorso/">Prof. Jason Corso</a>. He also collaborated with <a href="https://www.egr.msu.edu/~dmorris/">Prof. Daniel Morris</a> at <a href="https://msu.edu/">Michigan State University</a> on research in 3D point clouds.</p>
 
-✉️ [Email](mailto:m.wang-123@sms.ed.ac.uk) | 💻 [GitHub](https://github.com/wangmiaowei) | 🔗 [LinkedIn](https://www.linkedin.com/in/miaowei-michael-wang-10127620a/) | 📚 [Google Scholar](https://scholar.google.com/citations?user=0Jk6h2sAAAAJ&hl=en/)
+<p>Besdies, he has strong industrial experience in computer vision, computer graphics, and machine learning, having worked at <a href="https://www.lightspeed-studios.com/">Tencent LightSpeed</a> (Algorithm Intern), <a href="https://www.sensetime.com/en">SenseTime</a> (AI Researcher), <a href="https://manycoretech.com/">ManyCore</a> (AI Researcher), <a href="https://www.kuaishou.com/en">Kuaishou</a> (Algorithm Intern), and <a href="https://www.chinatelecom-h.com/en/global/home.php">China Telecom</a> (Algorithm Intern), et al.</p>
 
+<p>He's always open to collaborating—feel free to reach out!</p>
 
-## 📝 Representative Publications *(First Authorship)*
+<p style="white-space: nowrap; margin-bottom: 0.8rem;"><strong>Current Research Topics:</strong> <a href="#world-models">World Models</a> · <a href="#4d-generation">4D Generation</a> · <a href="#dynamic-reconstruction">Dynamic Reconstruction</a></p>
 
-1. **CanFields: Consolidating Diffeomorphic Flows for Non-Rigid 4D Interpolation from Arbitrary-Length Sequences**
-
-   *Accepted to ICCV 2025*
-
-   ![CanFields Cover](papers/canfields.png)  
-
-   We reconstruct a continuous spatiotemporal manifold from sparse point clouds, addressing the challenge of non-rigid 4D shape interpolation.
-   
-   🔗 [ArXiv](https://arxiv.org/abs/2406.18582) · [Project Page](https://wangmiaowei.github.io/CanFields.github.io/) · [Code](https://github.com/wangmiaowei/CanFields)
-
-2. **DecoupledGaussian: Object-Scene Decoupling for Physics-Based Interaction**
-   
-   *CVPR 2025*
-   
-   ![DecoupledGaussian Cover](papers/decoupledgaussian.png) 
-
-   A framework for simulating dynamic interactions involving contact and separation, by decoupling object and scene in a physically-aware manner.
-   
-   🔗 [ArXiv](https://arxiv.org/abs/2503.05484) · [Project Page](https://wangmiaowei.github.io/DecoupledGaussian.github.io/) · [Code](https://github.com/wangmiaowei/DecoupledGaussian/tree/main)
-
-3. **Self‑Annotated 3D Geometric Learning for Smeared Points Removal**
-
-   *WACV 2024*
-   
-      
-   ![SmearedRemover Cover](papers/smearedpoints.png)  
-
-
-   Proposes a self‑supervised method to remove smeared or noisy points in LiDAR/depth‑sensor data by learning consistent 3D geometric structures without manual annotations.
-   
-   🔗[ArXiv](https://arxiv.org/abs/2311.09029) · [Code](https://github.com/wangmiaowei/wacv2024_smearedremover)
-
-## 🎓 Teaching Experiences
-### Tutor — [**CGGS: Computer Graphics — Geometry and Simulation**](https://opencourse.inf.ed.ac.uk/cggs)
-
-**University of Edinburgh**
-**Jan – May 2024**, **Jan – May 2025**
+<small>*Profile image (right) photographed at <a href="https://www.nationalgalleries.org">National Galleries Scotland</a>, March 2025.*</small>

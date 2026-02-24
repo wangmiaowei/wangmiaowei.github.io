@@ -1,0 +1,24 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+- name: CV
+  icon: fa-solid fa-file-pdf
+  link: /assets/pdf/CoverLetter_CV_Miaowei_02_2026.pdf
+- name: Email
+  icon: fa-solid fa-envelope
+  link: mailto:m.wang-123@sms.ed.ac.uk
+- name: GitHub
+  icon: fa-brands fa-github
+  link: https://github.com/wangmiaowei
+- name: LinkedIn
+  icon: fa-brands fa-linkedin
+  link: https://linkedin.com/in/miaowei-michael-wang-10127620a
+- name: ResearchGate
+  icon: fa-brands fa-researchgate
+  link: https://www.researchgate.net/profile/Miaowei-Wang
+- name: Google Scholar
+  icon: ai ai-google-scholar
+  link: https://scholar.google.com/citations?user=0Jk6h2sAAAAJ
+- name: Bilibili
+  icon: fa-brands fa-bilibili
+  link: https://space.bilibili.com/407287196
