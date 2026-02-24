@@ -83,7 +83,7 @@ ul.task-list input[type="checkbox"] {
     
     /* Ensure buttons stay on one line */
     div[style*="display: flex"] {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: center;
       width: 100%;
     }
@@ -132,6 +132,12 @@ ul.task-list input[type="checkbox"] {
 @media (min-width: 576px) {
   .profile {
     width: 30%;
+
+    .more-info {
+      div[style*="display: flex"] {
+        flex-wrap: nowrap;
+      }
+    }
 
     .address {
       p {

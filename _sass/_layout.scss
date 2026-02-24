@@ -104,7 +104,7 @@ body {
 
 body.fixed-top-nav {
   // Add some padding for the nav-bar.
-  padding-top: 57px;
+  padding-top: 76px;
 }
 
 body.sticky-bottom-footer {
@@ -128,6 +128,7 @@ body.sticky-bottom-footer {
   white-space: nowrap;
   overflow-x: auto;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   gap: 1.2rem;
@@ -161,6 +162,24 @@ body.sticky-bottom-footer {
     &:hover {
       color: var(--global-theme-color);
       transform: translateY(-2px);
+    }
+  }
+}
+
+.footer-contact-icons {
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 575.98px) {
+  .contact-icons {
+    white-space: normal;
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+
+    a {
+      font-size: 1.6rem;
     }
   }
 }
