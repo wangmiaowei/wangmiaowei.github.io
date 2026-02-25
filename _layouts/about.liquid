@@ -10,7 +10,9 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    {% if page.subtitle %}
+      <p class="desc">{{ page.subtitle }}</p>
+    {% endif %}
   </header>
 
   <article>
@@ -55,14 +57,6 @@ layout: default
           const profileDiv = document.getElementById('__profile_align_ref');
           
           if (!contentDiv || !profileDiv) return;
-
-          // On mobile (<576px), disable profile height constraint to show full content
-          const isMobile = window.innerWidth < 576;
-          if (isMobile) {
-            profileDiv.style.maxHeight = '';
-            profileDiv.style.overflow = '';
-            return;
-          }
 
           // Step 1: Remove previous constraint to measure natural height
           profileDiv.style.maxHeight = '';

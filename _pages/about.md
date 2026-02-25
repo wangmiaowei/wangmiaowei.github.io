@@ -49,6 +49,6 @@ latest_posts:
 
 <p>He's always open to collaborating—feel free to reach out!</p>
 
-<p style="margin-bottom: 0.8rem;"><strong>Current Research Topics:</strong> <a href="#world-models">World Models</a> · <a href="#4d-generation">4D Generation</a> · <a href="#dynamic-reconstruction">Dynamic Reconstruction</a></p>
+<p style="margin-bottom: 0.8rem;"><strong>Research Topics:</strong> <a href="#world-models">World Models</a> · <a href="#4d-generation">4D Generation</a> · <a href="#dynamic-reconstruction">Dynamic Reconstruction</a></p>
 
-<small>*Profile image (right) photographed at <a href="https://www.nationalgalleries.org">National Galleries Scotland</a>, March 2025.*</small>
+<small style="color: var(--global-text-color-light); font-style: italic;">Profile image photographed at <a href="https://www.nationalgalleries.org">National Galleries Scotland</a>, March 2025.</small>

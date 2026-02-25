@@ -121,83 +121,75 @@ body.sticky-bottom-footer {
   img {
     width: 100%;
   }
+
+  // On mobile/tablet/watch: cancel float, display below text, centered
+  @media (max-width: 767px) {
+    float: none !important;
+    width: 90% !important;
+    max-width: 300px;
+    margin: 0.8rem auto 1rem !important;
+    display: block;
+  }
 }
 
-// Footer social icons - reduce image size
+// On mobile: also reset float-right/float-left Bootstrap classes on profile
+@media (max-width: 767px) {
+  .profile.float-right,
+  .profile.float-left {
+    float: none !important;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+// About page subtitle (PhD Candidate, Engineer, Tutor, Researcher)
+.desc {
+  font-size: clamp(1rem, 3.5vw, 1.35rem);
+  font-weight: normal;
+  color: var(--global-text-color);
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+// Footer social icons - 4+3 two-row layout
 .contact-icons {
-  white-space: normal;
-  overflow: visible;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  
-  img {
-    max-width: 44px;
-    max-height: 44px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-    
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
+  column-gap: 0.7rem;
+  row-gap: 0rem;
+  max-width: 340px;
+  margin: 0 auto 0.1rem;
 
   a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
     color: var(--global-text-color);
-    transition: color 0.2s ease, transform 0.2s ease;
-    flex-shrink: 0;
-    width: 2em;
-    height: 2em;
-    font-size: 1.8rem;
-    
+    font-size: 2.4rem;
+    width: 1.6em;
+    height: 1.4em;    transition: color 0.2s ease, transform 0.2s ease;
+
     &:hover {
       color: var(--global-theme-color);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
   }
-}
 
-.footer-contact-icons {
-  margin-bottom: 0.4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
-  row-gap: 0.6rem;
-  justify-items: center;
-}
-
-@media (max-width: 575.98px) {
-  .contact-icons {
-    white-space: normal;
-    overflow-x: visible;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-
-    a {
-      font-size: 1.5rem;
-    }
+  a:nth-child(1),
+  a:nth-child(2),
+  a:nth-child(3),
+  a:nth-child(4) {
+    flex: 0 0 calc(25% - 0.7rem);
   }
-}
 
-@media (max-width: 768px) {
-  .contact-icons {
-    gap: 0.8rem;
-    
-    a {
-      font-size: 1.6rem;
-    }
+  a:nth-child(5),
+  a:nth-child(6),
+  a:nth-child(7) {
+    flex: 0 0 calc(25% - 0.7rem);
   }
 }
 
