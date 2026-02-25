@@ -125,13 +125,13 @@ body.sticky-bottom-footer {
 
 // Footer social icons - reduce image size
 .contact-icons {
-  white-space: nowrap;
-  overflow-x: auto;
+  white-space: normal;
+  overflow: visible;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
   
   img {
     max-width: 44px;
@@ -168,6 +168,13 @@ body.sticky-bottom-footer {
 
 .footer-contact-icons {
   margin-bottom: 0.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  row-gap: 0.6rem;
+  justify-items: center;
 }
 
 @media (max-width: 575.98px) {
