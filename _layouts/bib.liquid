@@ -259,7 +259,7 @@
 
     {% if entry.abstract %}
       <!-- TL;DR -->
-      <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: rgba(0,0,0,0.02); border-radius: 2px; font-size: 0.9rem;">
+      <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: var(--global-card-bg-color); border-radius: 2px; font-size: 0.9rem;">
         <p style="margin: 0;"><strong>TL;DR:</strong> {{ entry.abstract }}</p>
       </div>
     {% endif %}
@@ -394,24 +394,34 @@
 
 <script>
   // Force strict alignment of preview images to the text column height
+  // Guard: only execute once even if bib.liquid is rendered multiple times
   (function() {
+    if (window.__bibAlignInitialized) return;
+    window.__bibAlignInitialized = true;
+
+    // On mobile, columns stack vertically — alignment is unnecessary and harmful
+    const isMobile = () => window.innerWidth < 768;
+
     const alignPreviews = () => {
+      if (isMobile()) {
+        // Reset any previously applied fixed heights on mobile
+        document.querySelectorAll('.publication-entry .preview-frame').forEach(frame => {
+          frame.style.height = 'auto';
+        });
+        return;
+      }
+
       document.querySelectorAll('.publication-entry').forEach(entry => {
-        // 1. Identify columns
-        const previewCol = entry.querySelector('.abbr'); // Left (Image)
-        const textCol = entry.querySelector('.pub-main'); // Right (Text)
+        const previewCol = entry.querySelector('.abbr');
+        const textCol = entry.querySelector('.pub-main');
         const frame = previewCol ? previewCol.querySelector('.preview-frame') : null;
         
         if (!previewCol || !textCol || !frame) return;
 
-        // 2. Reset height to allow natural flow (vital for recalculation)
         frame.style.height = 'auto';
         
-        // 3. Get the height of the right text column
         const textHeight = textCol.offsetHeight;
         
-        // 4. Calculate available height for the frame
-        // Subtract any badges in the left column
         let usedHeight = 0;
         Array.from(previewCol.children).forEach(child => {
           if (!child.classList.contains('preview-frame')) {
@@ -420,25 +430,32 @@
           }
         });
         
-        // Subtract padding of the column itself
         const colStyle = window.getComputedStyle(previewCol);
         usedHeight += parseFloat(colStyle.paddingTop) + parseFloat(colStyle.paddingBottom);
         
-        // 5. Apply height
         const finalHeight = textHeight - usedHeight;
         
-        if (finalHeight > 50) { // Safety check
+        if (finalHeight > 50) {
           frame.style.height = finalHeight + 'px';
         }
       });
     };
 
-    // Run heavily to catch all loading states
+    // Run on load and resize only — never on scroll or intervals
     window.addEventListener('load', alignPreviews);
-    window.addEventListener('resize', alignPreviews);
-    // Initial run
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(alignPreviews, 200);
+    });
     alignPreviews();
-    // Periodic checks
-    setInterval(alignPreviews, 500); 
+
+    // Retry a few times for images loading (desktop only)
+    let attempt = 0;
+    const retryInterval = setInterval(() => {
+      alignPreviews();
+      attempt++;
+      if (attempt > 8) clearInterval(retryInterval);
+    }, 600);
   })();
 </script>

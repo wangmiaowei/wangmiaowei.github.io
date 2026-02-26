@@ -2,7 +2,7 @@
   &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
 {% endcapture %}
 
-<footer class="mt-1" role="contentinfo" style="background-color: var(--global-bg-color); border-top: 1px solid var(--global-divider-color); padding: 0.2rem 0 0.2rem;">
+<footer class="mt-1" role="contentinfo" style="background-color: var(--global-bg-color); border-top: 1px solid var(--global-divider-color);">
   {% if site.newsletter.enabled %}
     {% include newsletter.liquid %}
   {% endif %}
@@ -13,7 +13,7 @@
       <div class="col-md-6 mb-2 mb-md-0 text-center text-md-left">
         <div id="clustrmaps-container" class="clustrmaps-container mx-auto mx-md-0" aria-label="Visitor map" style="max-width: 280px;">
           <a href="https://clustrmaps.com/site/1c9ar" title="ClustrMaps">
-            <img src="https://clustrmaps.com/map_v2.png?d=4ap2XfBaT0uEV8k86lhhj7VF3cQQHD5Vy5FOqKf3RZw&cl=ffffff&w=600" alt="Visitor map" style="width: 100%; height: auto;" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span style=\'font-size: 0.8rem; color: #6c757d;\'>Map blocked by browser</span>');">
+            <img src="https://clustrmaps.com/map_v2.png?d=4ap2XfBaT0uEV8k86lhhj7VF3cQQHD5Vy5FOqKf3RZw&cl=ffffff&w=600" width="600" height="314" alt="Visitor map" style="width: 100%; height: auto; aspect-ratio: 600/314;" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span style=\'font-size: 0.8rem; color: #6c757d;\'>Map blocked by browser</span>');">
           </a>
         </div>
         {% if site.last_updated %}
@@ -46,27 +46,32 @@
 </footer>
 
 <style>
-  /* Mobile-specific footer optimizations */
+  /* Footer padding - base and mobile */
+  footer[role="contentinfo"] {
+    padding: 0.5rem 0;
+  }
+
+  /* Mobile-specific footer optimizations - scoped to footer to avoid global side effects */
   @media (max-width: 767.98px) {
-    footer {
-      padding: 0.8rem 0;
+    footer[role="contentinfo"] {
+      padding: 1rem 0 1.5rem;
     }
     
-    .clustrmaps-container {
+    footer .clustrmaps-container {
       max-width: 240px !important;
       margin-bottom: 0.5rem !important;
     }
     
-    .footer-contact-icons {
+    footer .footer-contact-icons {
       margin-bottom: 0.5rem;
     }
     
-    .row.align-items-center {
+    footer .row.align-items-center {
       flex-direction: column;
       text-align: center;
     }
     
-    .col-md-6 {
+    footer .col-md-6 {
       width: 100%;
       margin-bottom: 1rem;
     }

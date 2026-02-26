@@ -6,7 +6,9 @@
       /* 容器：右侧留出 12px 空间专门放我们“画”出来的滑轮 */
       .news-container {
         max-height: 250px;
-        overflow-y: scroll;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
         padding-right: 12px; /* 留出空间 */
         border: 1px solid rgba(0,0,0,0.1);
         border-radius: 5px;
@@ -42,7 +44,7 @@
     </style>
     
     <div class="news-wrapper" style="position: relative;">
-      <div class="table-responsive news-container">
+      <div class="news-container">
         <table class="table table-sm table-borderless">
           {% assign news = site.news | reverse %}
           {% if include.limit and page.announcements.limit %}

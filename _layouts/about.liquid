@@ -46,7 +46,9 @@ layout: default
     <!-- Alignment Script -->
     <script>
       (function() {
-        // Add a unique ID to the profile if it doesn't have one for easier targeting
+        // Skip alignment entirely on mobile — profile is not floated, no alignment needed
+        const isMobile = () => window.innerWidth < 768;
+
         const profileDiv = document.querySelector('.profile');
         if (profileDiv && !profileDiv.id) {
           profileDiv.id = '__profile_align_ref';
@@ -55,74 +57,62 @@ layout: default
         const alignProfileToText = () => {
           const contentDiv = document.getElementById('about-content');
           const profileDiv = document.getElementById('__profile_align_ref');
-          
+
           if (!contentDiv || !profileDiv) return;
+
+          // On mobile, reset any previously applied constraints and bail out
+          if (isMobile()) {
+            profileDiv.style.maxHeight = '';
+            profileDiv.style.overflow = '';
+            return;
+          }
 
           // Step 1: Remove previous constraint to measure natural height
           profileDiv.style.maxHeight = '';
           profileDiv.style.overflow = '';
-          
+
           // Force reflow
           void profileDiv.offsetHeight;
 
           // Step 2: Get positions
           const contentRect = contentDiv.getBoundingClientRect();
           const profileRect = profileDiv.getBoundingClientRect();
-          
+
           // Step 3: Calculate excess
           const excess = profileRect.bottom - contentRect.bottom;
-          
+
           if (excess > 1) {
-            // Apply constraint: reduce profile's max height
             const targetMaxHeight = profileRect.height - excess - 1;
-            
             profileDiv.style.maxHeight = Math.max(100, targetMaxHeight) + 'px';
             profileDiv.style.overflow = 'hidden';
-            profileDiv.style.transition = 'none'; // No animation jumps
+            profileDiv.style.transition = 'none';
           }
         };
 
-        // Execute alignment
+        // Execute alignment only on load and resize — NEVER on scroll
+        // Scroll listeners that modify DOM cause iOS bounce-back bugs
         alignProfileToText();
-        
-        // Re-execute on critical events
         window.addEventListener('load', alignProfileToText);
-        window.addEventListener('resize', alignProfileToText);
-        
-        // Retry multiple times during page load
+
+        // Debounced resize handler
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(alignProfileToText, 150);
+        });
+
+        // Retry a few times during initial page load (images loading etc.)
         let attempt = 0;
         const retryInterval = setInterval(() => {
           alignProfileToText();
           attempt++;
-          if (attempt > 20) clearInterval(retryInterval); // Stop after 20 attempts
-        }, 200);
+          if (attempt > 10) clearInterval(retryInterval);
+        }, 300);
 
-        // Also re-align when images fully load
+        // Re-align when profile images fully load
         document.querySelectorAll('.profile img').forEach(img => {
           img.addEventListener('load', alignProfileToText);
         });
-
-        // MutationObserver: Watch for any DOM changes in the content and re-align
-        if (typeof MutationObserver !== 'undefined') {
-          try {
-            const contentDiv = document.getElementById('about-content');
-            if (contentDiv) {
-              const observer = new MutationObserver((mutations) => {
-                // Debounce: only re-align if there's actual content change
-                setTimeout(alignProfileToText, 100);
-              });
-              
-              observer.observe(contentDiv, {
-                childList: true,
-                subtree: true,
-                characterData: true,
-                attributes: false
-              });
-            }
-          } catch (e) {
-            console.log('MutationObserver not available');
-          }
-        }
       })();
     </script>
 
@@ -332,7 +322,7 @@ layout: default
         <h2>
           <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Representative Publications</a>
         </h2>
-        <p style="margin-bottom: 1.5rem;">For a complete list of publications, please refer to <a href="https://scholar.google.com/citations?user=0Jk6h2sAAAAJ" style="text-decoration: none; color: #333; background-color: #e9ecef; padding: 6px 12px; border-radius: 4px; display: inline-block; border: 1px solid #d0d5dd; font-size: 0.95rem; margin-left: 0.3rem;">Google Scholar</a></p>
+        <p style="margin-bottom: 1.5rem;">For a complete list of publications, please refer to <a href="https://scholar.google.com/citations?user=0Jk6h2sAAAAJ" style="text-decoration: none; color: var(--global-text-color); background-color: var(--global-card-bg-color); padding: 6px 12px; border-radius: 4px; display: inline-block; border: 1px solid var(--global-divider-color); font-size: 0.95rem; margin-left: 0.3rem;">Google Scholar</a></p>
         {% include selected_papers.liquid %}
       </div>
     {% endif %}
