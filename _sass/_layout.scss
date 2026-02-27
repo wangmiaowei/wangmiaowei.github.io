@@ -9,6 +9,9 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  // Prevent scroll-chaining (child → body → browser pull-to-refresh/bounce)
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 
   p {
     margin-bottom: 0.6rem;
