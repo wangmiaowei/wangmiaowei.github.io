@@ -249,3 +249,60 @@
 .citation-number {
   color: var(--global-theme-color);
 }
+
+// Publication category sub-headings (World Models, 4D Generation, etc.)
+.pub-category-heading {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--global-text-color);
+  letter-spacing: 0.01em;
+}
+
+// Publication links row (arXiv, PDF, Code, etc.)
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.pub-link {
+  text-decoration: none;
+  color: var(--global-theme-color);
+  cursor: pointer;
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--global-theme-color);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  i {
+    margin-right: 0.15rem;
+  }
+}
+
+// TL;DR abstract box
+.tldr-box {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--global-card-bg-color);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+
+  p {
+    margin: 0;
+    line-height: 1.55;
+  }
+}

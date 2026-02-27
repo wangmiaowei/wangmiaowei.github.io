@@ -10,36 +10,23 @@
         overscroll-behavior-y: contain;
         -webkit-overflow-scrolling: touch;
         padding-right: 12px; /* 留出空间 */
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid var(--global-divider-color);
         border-radius: 5px;
-        background: rgba(0,0,0,0.02);
+        background: var(--global-card-bg-color);
       }
 
-      /* 核心技巧：利用 ::after 伪元素在右侧硬画一个不动的蓝色条 */
-      /* 即使系统隐藏了真正滚动的滑块，这个蓝色的“痕迹”也永远在那 */
-      .news-wrapper::after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        width: 0px;
-        height: 0px; /* 模拟滑块长度 */
-        background: #a0a0a0; /* 灰色 */
-        border-radius: 0px;
-        opacity: 0; /* 淡淡的常驻痕迹 */
-      }
 
-      /* 针对能够渲染自定义滚动条的浏览器进行增强 */
+      /* Custom scrollbar styling */
       .news-container::-webkit-scrollbar {
         width: 6px !important;
         display: block !important;
       }
       .news-container::-webkit-scrollbar-thumb {
-        background-color: #a0a0a0 !important;
+        background-color: var(--global-text-color-light) !important;
         border-radius: 10px !important;
       }
       .news-container::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.05) !important;
+        background: var(--global-divider-color) !important;
       }
     </style>
     

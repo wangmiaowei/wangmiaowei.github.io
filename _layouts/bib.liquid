@@ -188,79 +188,79 @@
     </div>
 
     <!-- Links/Buttons -->
-    <div class="links" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.95rem;">
+    <div class="links pub-links">
       {% if entry.award %}
-        <a class="award" role="button" style="text-decoration: none; color: var(--global-theme-color); font-weight: 500;">
+        <a class="award pub-link" role="button" style="font-weight: 500;">
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
         </a>
       {% endif %}
       {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" style="text-decoration: none; color: var(--global-theme-color);">DOI</a>
+        <a class="pub-link" href="https://doi.org/{{ entry.doi }}">DOI</a>
       {% endif %}
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" style="text-decoration: none; color: var(--global-theme-color);"><i class="ai ai-arxiv"></i> arXiv</a>
+        <a class="pub-link" href="http://arxiv.org/abs/{{ entry.arxiv }}"><i class="ai ai-arxiv"></i> arXiv</a>
       {% endif %}
       {% if entry.hal %}
-        <a href="https://hal.science/{{ entry.hal }}" style="text-decoration: none; color: var(--global-theme-color);">HAL</a>
+        <a class="pub-link" href="https://hal.science/{{ entry.hal }}">HAL</a>
       {% endif %}
       {% if entry.bibtex_show %}
-        <a class="bibtex" role="button" style="text-decoration: none; color: var(--global-theme-color); cursor: pointer;">Bib</a>
+        <a class="bibtex pub-link" role="button">Bib</a>
       {% endif %}
       {% if entry.html %}
         {% if entry.html contains '://' %}
-          <a href="{{ entry.html }}" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-globe"></i> Project Page</a>
+          <a class="pub-link" href="{{ entry.html }}"><i class="fas fa-globe"></i> Project Page</a>
         {% else %}
-          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-globe"></i> Project Page</a>
+          <a class="pub-link" href="{{ entry.html | prepend: '/assets/html/' | relative_url }}"><i class="fas fa-globe"></i> Project Page</a>
         {% endif %}
       {% endif %}
       {% if entry.pdf %}
         {% if entry.pdf contains '://' %}
-          <a href="{{ entry.pdf }}" style="text-decoration: none; color: var(--global-theme-color);">PDF</a>
+          <a class="pub-link" href="{{ entry.pdf }}">PDF</a>
         {% else %}
-          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" style="text-decoration: none; color: var(--global-theme-color);">PDF</a>
+          <a class="pub-link" href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}">PDF</a>
         {% endif %}
       {% endif %}
       {% if entry.supp %}
         {% if entry.supp contains '://' %}
-          <a href="{{ entry.supp }}" style="text-decoration: none; color: var(--global-theme-color);">Supp</a>
+          <a class="pub-link" href="{{ entry.supp }}">Supp</a>
         {% else %}
-          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" style="text-decoration: none; color: var(--global-theme-color);">Supp</a>
+          <a class="pub-link" href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}">Supp</a>
         {% endif %}
       {% endif %}
       {% if entry.video and site.enable_video_embedding %}
-        <a class="abstract" role="button" style="text-decoration: none; color: var(--global-theme-color); cursor: pointer;"><i class="fas fa-play"></i> Video</a>
+        <a class="abstract pub-link" role="button"><i class="fas fa-play"></i> Video</a>
       {% elsif entry.video %}
-        <a href="{{ entry.video }}" style="text-decoration: none; color: var(--global-theme-color);"><i class="fas fa-play"></i> Video</a>
+        <a class="pub-link" href="{{ entry.video }}"><i class="fas fa-play"></i> Video</a>
       {% endif %}
       {% if entry.blog %}
-        <a href="{{ entry.blog }}" style="text-decoration: none; color: var(--global-theme-color);">Blog</a>
+        <a class="pub-link" href="{{ entry.blog }}">Blog</a>
       {% endif %}
       {% if entry.code %}
-        <a href="{{ entry.code }}" style="text-decoration: none; color: var(--global-theme-color);"><i class="fab fa-github"></i> Code</a>
+        <a class="pub-link" href="{{ entry.code }}"><i class="fab fa-github"></i> Code</a>
       {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}
-          <a href="{{ entry.poster }}" style="text-decoration: none; color: var(--global-theme-color);">Poster</a>
+          <a class="pub-link" href="{{ entry.poster }}">Poster</a>
         {% else %}
-          <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" style="text-decoration: none; color: var(--global-theme-color);">Poster</a>
+          <a class="pub-link" href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}">Poster</a>
         {% endif %}
       {% endif %}
       {% if entry.slides %}
         {% if entry.slides contains '://' %}
-          <a href="{{ entry.slides }}" style="text-decoration: none; color: var(--global-theme-color);">Slides</a>
+          <a class="pub-link" href="{{ entry.slides }}">Slides</a>
         {% else %}
-          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" style="text-decoration: none; color: var(--global-theme-color);">Slides</a>
+          <a class="pub-link" href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}">Slides</a>
         {% endif %}
       {% endif %}
       {% if entry.website %}
-        <a href="{{ entry.website }}" style="text-decoration: none; color: var(--global-theme-color);">Website</a>
+        <a class="pub-link" href="{{ entry.website }}">Website</a>
       {% endif %}
     </div>
 
     {% if entry.abstract %}
       <!-- TL;DR -->
-      <div class="abstract" style="margin-top: 0.75rem; padding: 0.75rem; background-color: var(--global-card-bg-color); border-radius: 2px; font-size: 0.9rem;">
-        <p style="margin: 0;"><strong>TL;DR:</strong> {{ entry.abstract }}</p>
+      <div class="abstract tldr-box">
+        <p><strong>TL;DR:</strong> {{ entry.abstract }}</p>
       </div>
     {% endif %}
 
@@ -348,6 +348,10 @@
               <img
                 src="https://img.shields.io/badge/scholar-{{ citation_count }}-4285F4?logo=googlescholar&labelColor=beige"
                 alt="{{ citation_count }} Google Scholar citations"
+                width="80"
+                height="20"
+                loading="lazy"
+                style="height: auto;"
               >
             </a>
           {% endif %}

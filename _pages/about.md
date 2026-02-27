@@ -45,7 +45,7 @@ latest_posts:
 
 <p>Previously, he completed his graduate studies at the <a href="https://eecs.engin.umich.edu/">Department of Electrical Engineering and Computer Science</a>, <a href="https://umich.edu/">University of Michigan</a>, under the supervision of <a href="https://web.eecs.umich.edu/~jjcorso/">Prof. Jason Corso</a>. He also collaborated with <a href="https://www.egr.msu.edu/~dmorris/">Prof. Daniel Morris</a> at <a href="https://msu.edu/">Michigan State University</a> on research in 3D point clouds.</p>
 
-<p>Besdies, he has strong industrial experience in computer vision, computer graphics, and machine learning, having worked at <a href="https://www.lightspeed-studios.com/">Tencent LightSpeed</a> (Algorithm Intern), <a href="https://www.sensetime.com/en">SenseTime</a> (AI Researcher), <a href="https://manycoretech.com/">ManyCore</a> (AI Researcher), <a href="https://www.kuaishou.com/en">Kuaishou</a> (Algorithm Intern), and <a href="https://www.chinatelecom-h.com/en/global/home.php">China Telecom</a> (Algorithm Intern), et al.</p>
+<p>Besides, he has strong industrial experience in computer vision, computer graphics, and machine learning, having worked at <a href="https://www.lightspeed-studios.com/">Tencent LightSpeed</a> (Algorithm Intern), <a href="https://www.sensetime.com/en">SenseTime</a> (AI Researcher), <a href="https://manycoretech.com/">ManyCore</a> (AI Researcher), <a href="https://www.kuaishou.com/en">Kuaishou</a> (Algorithm Intern), and <a href="https://www.chinatelecom-h.com/en/global/home.php">China Telecom</a> (Algorithm Intern), et al.</p>
 
 <p>He's always open to collaborating—feel free to reach out!</p>
 
